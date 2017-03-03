@@ -12,13 +12,16 @@ namespace WingoWeb.Models
 {
     public class Repo
     {
-        public string Owner { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
-        public static List<Repo> GetRepos()
+        public string Description { get; set; }
+
+
+        public static List<Repo> GetStars()
         {
-            var client = new RestClient("https://api.github.com/users/" + EnvironmentVariables.userName + "/repos");
+            var client = new RestClient("https://api.github.com");
             client.Authenticator = new HttpBasicAuthenticator(EnvironmentVariables.userName, EnvironmentVariables.password);
-            var request = new RestRequest();
+            var request = new RestRequest("user/starred");
             request.AddHeader("User-Agent", EnvironmentVariables.userName);
 
             var response = new RestResponse();
@@ -26,10 +29,12 @@ namespace WingoWeb.Models
             {
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
-            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
+            JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
             var repoList = JsonConvert.DeserializeObject<List<Repo>>(jsonResponse.ToString());
+
             return repoList;
         }
+
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
         {
             var tcs = new TaskCompletionSource<IRestResponse>();

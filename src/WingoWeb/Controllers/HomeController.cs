@@ -17,10 +17,16 @@ namespace WingoWeb.Controllers
             return View();
         }
 
-        public IActionResult GetRepos()
+        //public IActionResult GetRepos()
+        //{
+        //    var allRepos = Repo.GetRepos();
+        //    return View(allRepos);
+        //}
+
+        public IActionResult GetStars()
         {
-            var allRepos = Repo.GetRepos();
-            return View(allRepos);
+            var staredRepos = Repo.GetStars();
+            return View(staredRepos);
         }
     }
 }

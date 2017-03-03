@@ -1,0 +1,7 @@
+﻿@model IEnumerable<WingoWeb.Models.Repo>
+
+@foreach (var repo in Model)
+{
+    <h1>@repo.Name---</h1> <h4>@repo.Id</h4>
+    <p>@repo.Description</p>
+}
