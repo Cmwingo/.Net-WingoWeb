@@ -1,4 +1,33 @@
 ﻿body {
-    background-color: aqua;
-    margin-top: 75px;
+    background-color: rgb(169, 197, 242);
+}
+
+blockquote {
+    margin-top:5px;
+    width: 50%;
+    display: inline-block;
+}
+
+#quote {
+    text-align: center;
+}
+
+.header {
+    color: rgb(222, 229, 239);
+    font-size: 500%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 150px;
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 4px 4px black;
+}
+
+.header p {
+    margin-top: 70px;
+    text-align: center;
 }

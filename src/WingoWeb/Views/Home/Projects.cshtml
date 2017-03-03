@@ -5,8 +5,11 @@
 
 @model IEnumerable<WingoWeb.Models.Repo>
 <h1>My Reference Repositories</h1>
+<hr />
 @foreach (var repo in Model)
 {
-    <h3><a href='@repo.Owner.Html_Url/@repo.Name'> @repo.Name</a></h3>
-    <p>@repo.Description</p>
+    <div class="panel panel-default">
+        <div class="panel-heading"><a href='@repo.Owner.Html_Url/@repo.Name'> @repo.Name</a></div>
+        <div class="panel-body">@repo.Description</div>
+    </div>
 }
