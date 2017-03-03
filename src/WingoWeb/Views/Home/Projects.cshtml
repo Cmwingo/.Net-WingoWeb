@@ -2,6 +2,6 @@
 
 @foreach (var repo in Model)
 {
-    <h1>@repo.Name---</h1> <h4>@repo.Id</h4>
+    <h1><a href='@repo.Owner.Html_Url/@repo.Name'> @repo.Name</a></h1>
     <p>@repo.Description</p>
 }

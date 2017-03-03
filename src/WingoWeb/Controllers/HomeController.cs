@@ -17,13 +17,7 @@ namespace WingoWeb.Controllers
             return View();
         }
 
-        //public IActionResult GetRepos()
-        //{
-        //    var allRepos = Repo.GetRepos();
-        //    return View(allRepos);
-        //}
-
-        public IActionResult GetStars()
+        public IActionResult Projects()
         {
             var staredRepos = Repo.GetStars();
             return View(staredRepos);
