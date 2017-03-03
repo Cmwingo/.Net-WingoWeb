@@ -22,5 +22,10 @@ namespace WingoWeb.Controllers
             var staredRepos = Repo.GetStars();
             return View(staredRepos);
         }
+
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }
