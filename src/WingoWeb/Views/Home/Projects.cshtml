@@ -1,7 +1,12 @@
-﻿@model IEnumerable<WingoWeb.Models.Repo>
+﻿@{
+    ViewData["Title"] = "Welcome to Wingo's Web Portfolio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
+@model IEnumerable<WingoWeb.Models.Repo>
+<h1>My Reference Repositories</h1>
 @foreach (var repo in Model)
 {
-    <h1><a href='@repo.Owner.Html_Url/@repo.Name'> @repo.Name</a></h1>
+    <h3><a href='@repo.Owner.Html_Url/@repo.Name'> @repo.Name</a></h3>
     <p>@repo.Description</p>
 }

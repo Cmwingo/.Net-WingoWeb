@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Wingo's Web Portfolio", "Index", "Home", new { }, new { @class = "navbar-brand" })
+            </div>
+            <div class="collapse navbar-collapse" id="myNav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Projects", "Projects", "Home")</li>
+                    <li>@Html.ActionLink("About Me", "About", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>
