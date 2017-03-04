@@ -44,6 +44,15 @@ blockquote {
   font-style: oblique;
 }
 
+.carousel {
+    max-height: 300px;
+    overflow:hidden;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+}
 @media only screen and (max-width: 700px) {
     .header {
         font-size: 400%;
