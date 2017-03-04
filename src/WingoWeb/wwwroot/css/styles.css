@@ -35,7 +35,7 @@ blockquote {
 }
 
 .panel-default:hover {
-    background-color: black;
+    background-color: rgb(21, 60, 124);
     color:navajowhite;
 }
 .header p {
