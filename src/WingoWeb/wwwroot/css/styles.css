@@ -13,6 +13,12 @@ blockquote {
     text-align: center;
 }
 
+#quote img {
+    height: 400px;
+    width: auto;
+    margin-right: 15px;
+}
+
 .header {
     color: rgb(222, 229, 239);
     font-size: 500%;
@@ -28,6 +34,10 @@ blockquote {
     margin-bottom: 5px;
 }
 
+.panel-default:hover {
+    background-color: black;
+    color:navajowhite;
+}
 .header p {
     margin-top: 70px;
     text-align: center;
@@ -47,6 +57,7 @@ blockquote {
 .carousel {
     max-height: 300px;
     overflow:hidden;
+    margin-bottom: 20px;
 }
 
 .item img {
