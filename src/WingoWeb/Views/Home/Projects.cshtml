@@ -6,10 +6,17 @@
 @model IEnumerable<WingoWeb.Models.Repo>
 <h1>My Reference Repositories</h1>
 <hr />
-@foreach (var repo in Model)
+@if (Model != null)
 {
-    <div class="panel panel-default">
-        <div class="panel-heading"><a href='@repo.Owner.Html_Url/@repo.Name'> @repo.Name</a></div>
-        <div class="panel-body">@repo.Description</div>
-    </div>
+    @foreach (var repo in Model)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href='@repo.Owner.Html_Url/@repo.Name'> @repo.Name</a></div>
+            <div class="panel-body">@repo.Description</div>
+        </div>
+    }
+}
+else
+{
+    <h2>An error occured. Please make sure your Github credentials have been created properly in your Environment Variables</h2>
 }

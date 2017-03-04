@@ -30,10 +30,17 @@ namespace WingoWeb.Models
             {
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
-            JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
-            var repoList = JsonConvert.DeserializeObject<List<Repo>>(jsonResponse.ToString());
-
-            return repoList;
+            if(response.StatusCode.ToString() == "Unauthorized")
+            {
+                List<Repo> repoList = null;
+                return repoList;
+            }
+            else
+            {
+                JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
+                var repoList = JsonConvert.DeserializeObject<List<Repo>>(jsonResponse.ToString());
+                return repoList;
+            }
         }
 
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
