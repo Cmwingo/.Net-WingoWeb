@@ -15,21 +15,21 @@ You will need the following things properly installed on your computer.
 ## Github API Instructions
 
 * You will need to create a file in the `.Net-WingoWeb\src\.Net-WingoWeb\Models` folder called `EnvironmentVariables.cs`
-* Open the file and add the follwing code `
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+* Open the file and add the follwing code 
+``` using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Threading.Tasks;
 
-namespace WingoWeb
-{
-    public class EnvironmentVariables
-    {
-        public static string userName = "<YOUR GITHUB USERNAME>";
-        public static string password = "<YOUR GITHUB PASSWORD";
-    }
-}
-`
+	namespace WingoWeb
+	{
+		public class EnvironmentVariables
+		{
+			public static string userName = "<YOUR GITHUB USERNAME>";
+			public static string password = "<YOUR GITHUB PASSWORD";
+		}
+	}
+```
 * Note: This will show your starred repositories on the project page *NOT* mine. Just so you can see the API works.
 * You should then be able to run the project in Visual Studio
 
